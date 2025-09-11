@@ -107,6 +107,7 @@ nav ul li a:hover::after {
 .header-text h1 span {
     color: rgb(0, 128, 0);
 }
+/* About Section */
 #about {
     padding: 80px 0;
     color: #ababab;
@@ -117,16 +118,16 @@ nav ul li a:hover::after {
     flex-wrap: wrap;
 }
 .about-col-1 {
-    flex-basis: 35%;
+    flex-basis: 30%;
 }
 .about-col-1 img {
-    width: 110%;
+    width: 130%;
     border-radius: 15px;
 }
 .about-col-2 {
     flex-basis: 60%;
 }
-.about-col-2 h1 {
+.about-col-2 .subtitle {
     color: white;
 }
 .tab-titles {
@@ -170,4 +171,94 @@ nav ul li a:hover::after {
 }
 .tab-contents.active-tab {
     display: block;
+}
+/* Services Section */
+#services {
+    padding: 30px 0;
+}
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background, 0.5s, transform 0.5s;
+}
+.services-list i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list a {
+    text-decoration: none;
+    color: var(--fg-color);
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px)
+}
+/* Portfolio Section */
+#portfolio {
+    padding: 50px 0;
+}
+i {
+    margin-top: 30px;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(34, 111, 255);
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background, 0.5s, transform 0.5s;
+}
+.work-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px)
+}
+.work-list a {
+    text-decoration: none;
+    color: var(--fg-color);
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 10px;
+    display: inline-block;
 }

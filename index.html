@@ -33,28 +33,28 @@
                     <img src="images/user.gif" width="400" height="400">
                 </div>
                 <div class="about-col-2">
-                    <h1>About Me</h1>
+                    <h1 class="subtitle">About Me</h1>
                     <p>I'm Prompt from Thailand, and I make websites using HTML, CSS, and JavaScript. I sometimes use React with TypeScript or JavaScript, but the one I love most is TypeScript. I really enjoy writing code in my favorite editor, Visual Studio Code, available on Windows and Mac. I also enjoy Markdown — everything you need to know to get started writing documentation on GitHub.</p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="navigate_tab('skills')">Skills</p>
                         <p class="tab-links" onclick="navigate_tab('exp')">Experience</p>
                         <p class="tab-links" onclick="navigate_tab('social')">Social Links</p>
                     </div>
-                    <div class="tab-contents active-tab">
+                    <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>Developing</span><br> Web/Software Developer</li>
                             <li><span>Web Developer</span><br> Web App Layouts</li>
                             <li><span>Software Developer</span><br> Application Layouts</li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="exp">
                         <ul>
                             <li><span>React</span><br> Web with JS or TS</li>
                             <li><span>Electron JS</span><br> Desktop Apps</li>
                             <li><span>Vanilla TypeScript</span><br> Microsoft's JS</li>
                         </ul>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents" id="social">
                         <ul>
                             <li><span>DEV.TO</span><br> <a href="https://dev.to/ppprompt">CLICK</a></li>
                             <li><span>Stack Overflow</span><br> <a href="https://stackoverflow.com/users/28432190">CLICK</a></li>
@@ -65,5 +65,117 @@
             </div>
         </div>
     </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-brands fa-html5"></i>
+                    <h2>HTML, CSS, JS | Website Collaboration</h2>
+                    <p>If you ask me to do this, I will collaborate with you
+                       on Visual Studio Code if you have Live Share.
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>Electron App Making | App Making</h2>
+                    <p>If you ask me to do this I will help you make a electron app
+                        then send it to you through email
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-react"></i>
+                    <h2>Building React Websites</h2>
+                    <p>If you ask me to do this I will collaborate
+                        with you on your react app. If you want you
+                        could also submit extra requests through forms.
+                    </p>
+                    <a href="https://forms.gle/EmpoHRsPzeAQgNJTA">CLICK HERE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="subtitle">My Portfolio</h1>
+            <div class="work-list">
+                <div>
+                    <i class="fa-solid fa-utensils"></i>
+                    <h2 class="subtitle">Food Picker</h2>
+                    <p>Now don't worry about food, because
+                        you now have a food picker available for free!
+                    </p>
+                    <a href="https://prompt-bit.github.io/food-picker/" target="_blank">
+                        Open Website
+                    </a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    <h2 class="subtitle">Pomodoro Timer</h2>
+                    <p>Now don't worry about losing track of time
+                        because now you can use Pomodoro Timer
+                    </p>
+                    <a href="https://chromewebstore.google.com/detail/pomodoro-timer/hicallhmhpflaadfdifjbcgciniklmfb?authuser=0&hl=en" target="_blank">
+                        View
+                    </a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-sitemap"></i>
+                    <h2 class="subtitle">Tabs Organize</h2>
+                    <p>Now don't worry about losing tract of your chrome
+                        tabs
+                    </p>
+                    <a href="https://chromewebstore.google.com/detail/phicdimiaadjkfkbljamnnccdlokgmmi?authuser=0&hl=en" target="_blank">
+                        View
+                    </a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-water"></i>
+                    <h2 class="subtitle">Cool Ocean Theme</h2>
+                    <p>If you don't get to go to the beach,
+                        don't you worry! I got you covered!
+                    </p>
+                    <a href="https://chromewebstore.google.com/detail/apoiacdpieboglcfdoainljkmpilnmji?authuser=0&hl=en" target="_blank">
+                        View
+                    </a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-paint-roller"></i>
+                    <h2 class="subtitle">Titanium Color Picker</h2>
+                    <p>Find colors easily with this extension.
+                    </p>
+                    <a href="https://chromewebstore.google.com/detail/hahbgocjgknkngijpfhbkblfhidonaff?authuser=0&hl=en" target="_blank">
+                        View
+                    </a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-circle-info"></i>
+                    <h2 class="subtitle">System Info Viewer</h2>
+                    <p>View you system info easily!
+                    </p>
+                    <a href="https://github.com/Prompt-bit/System-Info-Viewer" target="_blank">
+                        Open Github
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Adding Tab Scripts (in about) -->
+     <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function navigate_tab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+     </script>
+     <script src="https://kit.fontawesome.com/e04a44eac6.js" crossorigin="anonymous"></script>
 </body>
 </html>
