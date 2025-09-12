@@ -11,6 +11,16 @@
         <div class="container">
             <nav>
                 <h1 class="logo">..<span>P</span>ROMPT</h1>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
             <div class="header-text">
                 <div class="intro">
                     <p>Web Developer - UI/UX Designer - Software Developer</p>
@@ -31,7 +41,7 @@
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="navigate_tab('skills')">Skills</p>
                         <p class="tab-links" onclick="navigate_tab('exp')">Experience</p>
-                        <p class="tab-links" onclick="navigate_tab('social')">Social Links</p>
+                        <p class="tab-links" onclick="navigate_tab('social')">Social</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
@@ -153,8 +163,36 @@
             </div>
         </div>
     </div>
-    <!-- Adding Tab Scripts (in about) -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p>Feel Free to contact me anytime you like!</p>
+                    <p><i class="fa-solid fa-envelope"></i>phawach4prompt@gmail.com</p>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Enter your Name" required>
+                        <input type="email" name="Email" placeholder="Enter your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Message Here"></textarea>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright &copy; Prompt. Licensed Under the MIT License</p>
+            <br>
+            <a href="#header">
+                <button class="btn">Scroll to Top</button>
+            </a>
+        </div>
+    </div>
+    <!-- Adding Scripts-->
      <script>
+        // Tab Scripts ( in about )
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
@@ -168,6 +206,29 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab")
         }
+        // Sidebar Scripts
+        window.onload = function() {
+            const sidemenu = document.getElementById("sidemenu");
+
+            window.openmenu = function() {
+                sidemenu.style.right = "0";
+            }
+
+            window.closemenu = function() {
+                sidemenu.style.right = "-200px";
+            }
+        };
+        // Send to Google Sheet Scripts
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby8ZLuYE0tubKRkX9Z4Tqlw6L8XdZSDc4jHypDozdDhsJg767sTBI5ljMsJi-Dk618W1g/exec';
+        const form = document.forms['submit-to-google-sheet'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+            form.reset(); // optional: clear form immediately
+        });
+
+
      </script>
      <script src="https://kit.fontawesome.com/e04a44eac6.js" crossorigin="anonymous"></script>
 </body>
